@@ -1,0 +1,135 @@
+header {
+  display: flex;
+  align-items: center;
+  padding: 26px 8%;
+  justify-content: space-between;
+  background-image: radial-gradient(rgb(6, 6, 141), rgb(6, 6, 109));
+}
+#header.fixar {
+  position: sticky;
+  display: flex;
+  top: -3px;
+  background-image: radial-gradient(rgb(6, 6, 141), rgb(6, 6, 109));
+  z-index: 100;
+  transition: 8s ease;
+}
+#logo {
+  color: #ffff;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 1.1rem;
+  animation: animar_logo 4s infinite;
+  flex-direction: column;
+}
+@keyframes animar_logo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#logo img {
+  width: 19%;
+}
+.tv {
+  animation: animar_tv 4s infinite;
+}
+@keyframes animar_tv {
+  0% {
+    text-shadow: 0 0 2px #fff;
+  }
+  50% {
+    text-shadow: 0 0 7px #fff;
+  }
+  100% {
+    text-shadow: 0 0 9px #fff;
+  }
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  display: flex;
+}
+nav ul a {
+  color: #fff;
+  font-weight: 400;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+
+header .link::after {
+  content: " ";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 0;
+  height: 4px;
+  left: 0;
+  box-shadow: 0 0 10px #ffff;
+  transition: 0.8s ease;
+  bottom: -4px;
+}
+header .link:hover::after {
+  width: 100%;
+}
+#navbarMobil {
+  display: none;
+}
+@media screen and (max-width: 1222px) {
+  #navbarMobil {
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    left: -300px;
+    height: 100vh;
+    align-items: center;
+    width: 270px;
+    opacity: 0;
+    transition: 0.6s ease;
+    justify-content: center;
+    flex-direction: column;
+    background-image: radial-gradient(rgb(6, 6, 141), rgb(6, 6, 109));
+  }
+  #navbarMobil.menuMobil {
+    left: 0;
+    opacity: 7;
+  }
+
+  header .menu {
+    display: block;
+  }
+  #navbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  #navbarMobil {
+    width: 210px;
+  }
+  .rede_sociais a:nth-child(5){
+    display: none;
+  }  
+}
